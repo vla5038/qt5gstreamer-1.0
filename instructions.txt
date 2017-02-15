@@ -1,0 +1,45 @@
+This is shot instruction for build  qt5gstreamer libs (in repository available qt5gstreamer libs).
+
+1) download:
+
+   qtgstreeamer source from  https://github.com/detrout/qt-gstreamer(git clone -b master https://github.com/detrout/qt-gstreamer.git)
+
+   boost from https://sourceforge.net/projects/boost/files/boost/ (I am used boost_1_59_0)
+   
+   gstreamer from https://gstreamer.freedesktop.org/data/pkg/windows/ (I am used gstreamer-1.0-devel-x86-1.6.4.msi and gstreamer-1.0-x86-1.6.4.msi)
+
+   cmake from https://cmake.org/download/ (I am used cmake-3.7.2-win64-x64.msi) 
+   
+   Qt5.4.1 from qt-project.org/downloads (I am used qt-opensource-windows-x86-msvc2013-5.4.1.exe)
+   
+   MS Visual Studio from https://www.microsoft.com/en-us/download/ (I am used MS Visual Studio 12 2013)
+   
+   doxygen from https://sourceforge.net/projects/doxygen/
+
+2) after download and install programms add in CMAke list (in qt-gstreamer folder)
+
+cmake_policy (SET CMP0020 NEW)
+
+3) add in system PATH, path programms and source  
+
+(for example some my PATH for building libs)
+
+C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;C:\Program Files\CMake\bin;C:\Program Files\doxygen\bin;C:\gstreamer\1.0\x86\include;C:\gstreamer\1.0\x86\lib;C:\gstreamer\1.0\x86\lib\glib-2.0\include;C:\gstreamer\1.0\x86\lib\gstreamer-1.0;C:\gstreamer\boost_1_59_0\boost;C:\gstreamer\boost_1_59_0\boost;C:\gstreamer\qt-gstreamer;C:\Qt\Qt5.4.1\5.4\msvc2013\bin;C:\Qt\Qt5.4.1\5.4\msvc2013\include;C:\Qt\Qt5.4.1\5.4\msvc2013\lib;C:\gstreamer\1.0\x86\bin\lib
+
+4) open cmake-gui
+add path where source qt-gstreamer è folder where must be building libs
+take header from gstreamer\1.0\x86\lib\gstreamer-1.0\include\gst\gstconfig.h to C:\gstreamer\1.0\x86\include\gstreamer-1.0\gst 
+for example screenshot available in repository
+
+5) press button Configure, choose  Visual Studio 12 2013
+Configure ends with error  Could NOT find Qt4or5.
+Set flag Advanced in cmake-gui.
+Fing in list parameter QT_VERSION.
+Delete number 4 and set number 5.
+Repeat press button Configure.
+Configure ends by message "Congratulations! All external packages have been found.".
+Press button Generate.
+Generate must ends with no errors.
+Then press button Open Project.
+In Visual Studio press on ALL_BUILD, then build, ends message - Build: 16 succeeded, 0 failed, 0 up-to-date, 0 skipped
+
