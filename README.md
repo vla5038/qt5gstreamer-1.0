@@ -1,0 +1,1 @@
+This is shot instruction for build  qt5gstreamer libs (in repository available qt5gstreamer libs).
