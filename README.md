@@ -1,1 +1,1 @@
-This is shot instruction for build  qt5gstreamer libs (in repository available qt5gstreamer libs).
+This is shot instruction for build  qt5gstreamer libs for Windows (in repository available qt5gstreamer libs).
